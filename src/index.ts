@@ -30,7 +30,7 @@ if (!TOKEN) throw new Error("DISCORD_BOT_TOKEN environment variable is not set")
 
 // ─── Constants ───────────────────────────────────────────────────────────────
 
-const EMBED_COLOR = 0x0a4939;
+const EMBED_COLOR = 0x0c0c0c;
 
 // Self-role system
 const SELF_ROLE_CHANNEL_ID = "1488442875082707015";
@@ -369,7 +369,7 @@ client.on("voiceStateUpdate", async (oldState: VoiceState, newState: VoiceState)
       const categoryId = joinChannel?.parentId ?? null;
 
       const tempVC = await guild.channels.create({
-        name: `☑️・${member.displayName} Verification`,
+        name: `✅・${member.displayName} Verification`,
         type: ChannelType.GuildVoice,
         parent: categoryId ?? undefined,
         permissionOverwrites: [
