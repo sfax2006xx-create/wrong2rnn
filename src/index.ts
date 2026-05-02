@@ -227,7 +227,7 @@ function buildVerifiedDmEmbed(guild: Guild, member: GuildMember) {
     "",
     "**If you need any help, don't hesitate to contact the staff team.**",
     "",
-    "__**Welcome To /Wrong Turn   | Tn.**__",
+    "__**Welcome To BangzZ Community.**__",
   ].join("\n");
 
   return new EmbedBuilder()
