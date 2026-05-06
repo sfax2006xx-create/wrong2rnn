@@ -47,14 +47,8 @@ const MALE_ROLE_ID            = "1488521698973061283";
 const FEMALE_ROLE_ID          = "1488521734171656282";
 const REMOVE_ROLE_ID          = "1488628569990238329";
 
-// Users allowed to use ?ve command
-const ALLOWED_CMD_USERS = new Set([
-  "1275794255692042242",
-  "1375107394081787977",
-  "961981929589186601",
-  "761277337584533555",
-  "985199377041752104",
-]);
+// Role allowed to use ?ve command
+const ALLOWED_CMD_ROLE_ID = "1488949722210238464";
 
 // ─── Self-role data ───────────────────────────────────────────────────────────
 
@@ -500,7 +494,7 @@ client.on("messageCreate", async (message: Message) => {
   console.log(`[Bot] ?ve message received from ${message.author.id}: "${message.content}"`);
 
   if (!message.content.startsWith("?ve ")) return;
-  if (!ALLOWED_CMD_USERS.has(message.author.id)) {
+  if (!message.member?.roles.cache.has(ALLOWED_CMD_ROLE_ID)) {
     console.log(`[Bot] Unauthorized user tried ?ve: ${message.author.id}`);
     return;
   }
